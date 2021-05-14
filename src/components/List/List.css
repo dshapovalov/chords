@@ -1,0 +1,141 @@
+.listLayout {
+    top: 0;
+    left: 0;
+    position: fixed;
+    align-self: stretch;
+    /*background-image: linear-gradient(rgba(34, 42, 69, 0.96), rgba(34, 42, 69, 0.96)), url(/img/sidebar-bg-dark2.jpg);*/
+    background-color: #2b334c;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    /*height: 100vh;*/
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 5px 5px -3px, rgba(0, 0, 0, 0.043) 0px 8px 10px 1px, rgba(0, 0, 0, 0.035) 0px 3px 14px 2px;
+    transition: all 600ms ease-in-out 0s;
+    color: #fff;
+    overflow-y: hidden;
+    width: 450px;
+    z-index: 2;
+}
+
+.listLayout.collapsed {
+    width: 50px;
+}
+
+.listLayout.collapsed .allSongs, .listLayout.collapsed .todaysList, .openList {
+    display: none;
+}
+
+.listLayout.collapsed .openList {
+    padding-top: 20px;
+    display: block;
+    cursor: pointer;
+}
+
+.toogleList, .todaysListTitle {
+    cursor: pointer;
+}
+
+.listLayout.collapsed {
+    width: 40px;
+}
+
+.listLayout:hover, .allSongs:active, .allSongs:focus {
+    overflow-y: auto;
+}
+
+.listLayout::-webkit-scrollbar-track, body::-webkit-scrollbar-track  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+.listLayout::-webkit-scrollbar, body::-webkit-scrollbar {
+    /*width: 8px;*/
+    width: 0;
+    background-color: transparent;
+}
+
+.listLayout::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #aaa;
+}
+
+.songsList {
+    list-style: none;
+    text-align: left;
+    padding-inline-start: 20px;
+    margin-block-start: 0;
+}
+
+.songsList li {
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 4px;
+    margin-right: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.songsList li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.songsList li.active {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.songsList li.active:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.songsList.today {
+
+}
+
+.allSongsTitle, .todaysListTitle {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 14px;
+}
+
+.todaysList {
+    position: fixed;
+    /*position: absolute;*/
+    width: 440px;
+    height: 236px;
+    z-index: 10;
+    padding-top: 20px;
+    color: #fff;
+    /*background-image: linear-gradient(rgba(34, 42, 69, 0.96), rgba(34, 42, 69, 0.96)), url(/img/sidebar-bg-dark2.jpg);*/
+    background-color: #2b334c;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.allSongs {
+    margin-top: 266px;
+    /*padding-top: 20px;*/
+}
+
+.allSongsTitle i, .todaysListTitle i {
+    position: absolute;
+    top: -2px;
+}
+
+.allSongsTitle span, .todaysListTitle span {
+    margin-left: 28px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; } /* IE < 8 */
